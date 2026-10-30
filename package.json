@@ -1,0 +1,12 @@
+{
+  "name": "support-triage",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Support ticket escalation queue for the success team",
+  "scripts": {
+    "test": "node --test",
+    "triage": "node src/triage.mjs"
+  },
+  "engines": { "node": ">=20" }
+}
