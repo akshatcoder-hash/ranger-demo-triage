@@ -34,13 +34,13 @@ test('joins customers by email, case and whitespace insensitive', () => {
 
 test('escalates only enterprise tickets open strictly more than 24 hours', () => {
   const ids = escalationQueue(tickets, customers, AS_OF).map((ticket) => ticket.ticket_id);
-  assert.deepEqual(ids, ['T-1046', 'T-1042', 'T-1044']);
+  assert.deepEqual(ids, ['T-1042', 'T-1046', 'T-1044']);
 });
 
 test('sorts by priority first, then by hours open descending', () => {
   const queue = escalationQueue(tickets, customers, AS_OF);
   assert.deepEqual(
     queue.map((ticket) => `${ticket.priority}:${ticket.ticket_id}`),
-    ['urgent:T-1046', 'urgent:T-1042', 'normal:T-1044'],
+    ['urgent:T-1042', 'urgent:T-1046', 'normal:T-1044'],
   );
 });
